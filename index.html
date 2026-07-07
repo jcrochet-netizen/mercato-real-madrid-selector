@@ -144,6 +144,7 @@
   .tag.exp{background:var(--exp-bg);color:var(--exp-ink);}
   .tag.ret{background:#D9ECFF;color:var(--om-blue-deep);}
   .tag.exer{background:#D6F4E4;color:#0f8a52;}
+  .tag.signed{background:#f6e9c8;color:#8a6d1f;}
   .card .quick{display:flex;gap:4px;margin-top:7px;width:100%;}
   .card.in-list .quick{display:none;}
   .qbtn{flex:1;border:none;border-radius:7px;font-weight:800;font-size:9.5px;padding:5px 2px;cursor:pointer;color:#fff;transition:filter .12s, transform .1s;white-space:nowrap;}
@@ -282,6 +283,9 @@
   </div>
 
   
+  <div class="legend">
+    <span><i style="background:#f6e9c8"></i> <b>Recrue</b> — vient de signer, non transférable</span>
+  </div>
   <div class="pool" id="pool" data-zone="pool"></div>
 
   <div class="cols">
@@ -305,7 +309,7 @@
 
   <footer class="cred">
     Données : Sportmonks · Valeurs marchandes et options d'achat estimées (indicatives)<br>
-    Données salaires : capology.com
+    Données salaires bruts/annuel : capology.com
   </footer>
 </div>
 
@@ -371,7 +375,7 @@ const CONFIG = {
    DONNÉES — Effectif OM 2025/2026 (source Sportmonks).
    "val" = valeur marchande estimée en M€ (INDICATIVE — édite librement).
    ================================================================= */
-const PLAYERS = [{"id": 1314, "name": "Thibaut Courtois", "pos": "Gardien", "group": "Gardien", "img": "https://cdn.sportmonks.com/images/soccer/players/2/1314.png", "val": 20}, {"id": 205983, "name": "Andriy Lunin", "pos": "Gardien", "group": "Gardien", "img": "https://cdn.sportmonks.com/images/soccer/players/31/205983.png", "val": 8}, {"id": 37656778, "name": "Fran González", "pos": "Gardien", "group": "Gardien", "img": "https://cdn.sportmonks.com/images/soccer/players/10/37656778.png", "val": 3}, {"id": 460160, "name": "Éder Militão", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/0/460160.png", "val": 50}, {"id": 1917, "name": "Trent Alexander-Arnold", "pos": "Latéral droit", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/29/1917.png", "val": 70}, {"id": 37596373, "name": "Raúl Asencio", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/21/37596373.png", "val": 25}, {"id": 37537864, "name": "Álvaro Carreras", "pos": "Latéral gauche", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/8/37537864.png", "val": 35}, {"id": 537666, "name": "Fran García", "pos": "Latéral gauche", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/2/537666.png", "val": 18}, {"id": 31837, "name": "Antonio Rüdiger", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/29/31837.png", "val": 22}, {"id": 98903, "name": "Ferland Mendy", "pos": "Latéral gauche", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/23/98903.png", "val": 20}, {"id": 37612542, "name": "Dean Huijsen", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/30/37612542.png", "val": 50}, {"id": 37255840, "name": "Jude Bellingham", "pos": "Milieu offensif", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/0/37255840.png", "val": 180}, {"id": 23688922, "name": "Eduardo Camavinga", "pos": "Milieu central", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/26/23688922.png", "val": 90}, {"id": 260862, "name": "Federico Valverde", "pos": "Milieu central", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/30/260862.png", "val": 100}, {"id": 5270371, "name": "Aurélien Tchouaméni", "pos": "Milieu défensif", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/3/5270371.png", "val": 80}, {"id": 37547467, "name": "Arda Güler", "pos": "Milieu offensif", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/11/37547467.png", "val": 60}, {"id": 600687, "name": "Vinicius Junior", "pos": "Ailier gauche", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/15/600687.png", "val": 170}, {"id": 96611, "name": "Kylian Mbappé", "pos": "Avant-centre", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/3/96611.png", "val": 180}, {"id": 7346228, "name": "Rodrygo", "pos": "Ailier droit", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/20/7346228.png", "val": 90}, {"id": 37593253, "name": "Gonzalo García", "pos": "Avant-centre", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/5/37593253.png", "val": 30}, {"id": 340342, "name": "Brahim Díaz", "pos": "Ailier droit", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/22/340342.png", "val": 25}, {"id": 37729623, "name": "Franco Mastantuono", "pos": "Ailier droit", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/23/37729623.png", "val": 45}, {"id": 37647009, "name": "Endrick", "pos": "Avant-centre", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/1/37647009.png", "val": 40}];
+const PLAYERS = [{"id": 1314, "name": "Thibaut Courtois", "pos": "Gardien", "group": "Gardien", "img": "https://cdn.sportmonks.com/images/soccer/players/2/1314.png", "val": 20}, {"id": 205983, "name": "Andriy Lunin", "pos": "Gardien", "group": "Gardien", "img": "https://cdn.sportmonks.com/images/soccer/players/31/205983.png", "val": 8}, {"id": 37656778, "name": "Fran González", "pos": "Gardien", "group": "Gardien", "img": "https://cdn.sportmonks.com/images/soccer/players/10/37656778.png", "val": 3}, {"id": 460160, "name": "Éder Militão", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/0/460160.png", "val": 50}, {"id": 1917, "name": "Trent Alexander-Arnold", "pos": "Latéral droit", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/29/1917.png", "val": 70}, {"id": 37596373, "name": "Raúl Asencio", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/21/37596373.png", "val": 25}, {"id": 37537864, "name": "Álvaro Carreras", "pos": "Latéral gauche", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/8/37537864.png", "val": 35}, {"id": 537666, "name": "Fran García", "pos": "Latéral gauche", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/2/537666.png", "val": 18}, {"id": 31837, "name": "Antonio Rüdiger", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/29/31837.png", "val": 22}, {"id": 98903, "name": "Ferland Mendy", "pos": "Latéral gauche", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/23/98903.png", "val": 20}, {"id": 37612542, "name": "Dean Huijsen", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/30/37612542.png", "val": 50}, {"id": 37255840, "name": "Jude Bellingham", "pos": "Milieu offensif", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/0/37255840.png", "val": 180}, {"id": 23688922, "name": "Eduardo Camavinga", "pos": "Milieu central", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/26/23688922.png", "val": 90}, {"id": 260862, "name": "Federico Valverde", "pos": "Milieu central", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/30/260862.png", "val": 100}, {"id": 5270371, "name": "Aurélien Tchouaméni", "pos": "Milieu défensif", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/3/5270371.png", "val": 80}, {"id": 37547467, "name": "Arda Güler", "pos": "Milieu offensif", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/11/37547467.png", "val": 60}, {"id": 600687, "name": "Vinicius Junior", "pos": "Ailier gauche", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/15/600687.png", "val": 170}, {"id": 96611, "name": "Kylian Mbappé", "pos": "Avant-centre", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/3/96611.png", "val": 180}, {"id": 7346228, "name": "Rodrygo", "pos": "Ailier droit", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/20/7346228.png", "val": 90}, {"id": 37593253, "name": "Gonzalo García", "pos": "Avant-centre", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/5/37593253.png", "val": 30}, {"id": 340342, "name": "Brahim Díaz", "pos": "Ailier droit", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/22/340342.png", "val": 25}, {"id": 37729623, "name": "Franco Mastantuono", "pos": "Ailier droit", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/23/37729623.png", "val": 45}, {"id": 37647009, "name": "Endrick", "pos": "Avant-centre", "group": "Attaquant", "img": "https://cdn.sportmonks.com/images/soccer/players/1/37647009.png", "val": 40}, {"id": 26027, "name": "Denzel Dumfries", "pos": "Latéral droit", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/11/26027.png", "val": 25}, {"id": 448448, "name": "Marc Cucurella", "pos": "Latéral gauche", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/0/448448.png", "val": 45}, {"id": 100556, "name": "Ibrahima Konaté", "pos": "Défenseur central", "group": "Défenseur", "img": "https://cdn.sportmonks.com/images/soccer/players/12/100556.png", "val": 50}, {"id": 96353, "name": "Bernardo Silva", "pos": "Milieu offensif", "group": "Milieu", "img": "https://cdn.sportmonks.com/images/soccer/players/1/96353.png", "val": 60}];
 
 /* Joueurs DE RETOUR DE PRÊT (propriété du Real Madrid -> vendables, rapportent leur valeur) */
 const RETURNING = [];
@@ -386,12 +390,14 @@ const LOAN = {};
 /* Options d'achat OBLIGATOIRES (déjà levées) -> joueurs de l'effectif OM, vendables. */
 const EXERCISED = [];
 const EXPIRING = [];
+const SIGNED = ["Denzel Dumfries", "Marc Cucurella", "Ibrahima Konaté", "Bernardo Silva"]; // recrues non transférables
 
 /* Salaire annuel brut estimé (M€/an) — source Capology. Clé = id joueur. */
-const SALARIES = {1314:12, 205983:4, 37656778:1, 460160:12, 1917:15, 37596373:3, 37537864:4, 537666:4, 31837:12, 98903:8, 37612542:6, 37255840:20, 23688922:12, 260862:14, 5270371:14, 37547467:5, 600687:20, 96611:25, 7346228:12, 37593253:3, 340342:6, 37729623:5, 37647009:6};
+const SALARIES = {1314:12, 205983:4, 37656778:1, 460160:12, 1917:15, 37596373:3, 37537864:4, 537666:4, 31837:12, 98903:8, 37612542:6, 37255840:20, 23688922:12, 260862:14, 5270371:14, 37547467:5, 600687:20, 96611:25, 7346228:12, 37593253:3, 340342:6, 37729623:5, 37647009:6, 26027:6, 448448:7, 100556:9, 96353:12};
 
 PLAYERS.forEach(p=>{
   if(p.ret){ p.status='returning'; p.option=null; }
+  else if(SIGNED.includes(p.name)){ p.status='signed'; p.option=null; }
   else if(EXERCISED.includes(p.name)){ p.status='exercised'; p.option=null; }
   else if(p.name in LOAN){ p.status='loan'; p.option=LOAN[p.name]; }
   else if(EXPIRING.includes(p.name)){ p.status='expiring'; p.option=null; }
@@ -447,6 +453,7 @@ function statusTag(p, prefix=''){
   if(p.status==='loan') return `<span class="tag loan">${prefix}Prêté</span>`;
   if(p.status==='expiring') return `<span class="tag exp">${prefix}Fin de contrat</span>`;
   if(p.status==='exercised') return `<span class="tag exer">${prefix}Option levée</span>`;
+  if(p.status==='signed') return `<span class="tag signed">${prefix}Recrue</span>`;
   return '';
 }
 function salaryPill(p){
@@ -483,10 +490,9 @@ function buildPoolCard(p){
         <div class="tags">${statusTag(p)}${money}${salaryPill(p)}</div>
       </div>
     </div>
-    <div class="quick">
-      <button class="qbtn keep" data-act="keep">✅ Garder</button>
-      <button class="qbtn sell" data-act="sell">${sellLabel}</button>
-    </div>`;
+    ${p.status==='signed'
+      ? `<div class="quick"><button class="qbtn keep" data-act="keep" style="flex:1">✅ Garder</button></div>`
+      : `<div class="quick"><button class="qbtn keep" data-act="keep">✅ Garder</button><button class="qbtn sell" data-act="sell">${sellLabel}</button></div>`}`;
   return el;
 }
 function buildListCard(p, zone){
@@ -557,7 +563,11 @@ function render(){
 /* =================================================================
    INTERACTIONS : drag & drop (pointer) + boutons rapides
    ================================================================= */
-function moveTo(id, zone){ state[id]=zone; render(); }
+function moveTo(id, zone){
+  const pl=PLAYERS.find(x=>x.id===id);
+  if(pl && pl.status==='signed' && zone==='sell') return; // recrue non transférable
+  state[id]=zone; render();
+}
 function attachInteractions(){
   document.querySelectorAll('.card').forEach(c=>c.addEventListener('pointerdown', onPointerDown));
   document.querySelectorAll('.qbtn').forEach(b=>b.addEventListener('click', e=>{
@@ -665,7 +675,7 @@ function showResult(){
     if(keepCost(p)>0) rv=`<span class="rv cost">🛒 ${fmtM(p.option)}</span>`;
     else if(recovery(p)>0) rv=`<span class="rv mut">${fmtM(p.val)}</span>`;
     else rv=`<span class="rv mut">${p.status==='loan'?'Prêté':'Libre'}</span>`;
-    const sub = (p.status==='returning'||p.status==='exercised') ? statusTag(p) : '';
+    const sub = (p.status==='returning'||p.status==='exercised'||p.status==='signed') ? statusTag(p) : '';
     return `<li>${photoHTML(p,'mini')}<span class="rn"><b>${displayName(p)}</b>${sub}${salLine(p)}</span>${rv}</li>`;
   };
   const liSell=p=>{
